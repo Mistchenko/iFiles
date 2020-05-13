@@ -3,7 +3,10 @@ from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
 from datetime import date
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static',
+            template_folder='templates')
 app.debug = True
 app.config['UPLOAD_FOLDER'] = '/store'
 
