@@ -24,7 +24,9 @@ def index():
             filename = secure_filename(f.filename)
             dir = os.path.join(app.config['UPLOAD_FOLDER'], subdir)
             os.makedirs(dir, exist_ok=True)
-            f.save(os.path.join(dir, filename))
+            full_path = os.path.join(dir, filename)
+            f.save(full_path)
+            os.chmod(full_path, 0o666)
             up_files.append(filename)
             print('save:', filename)
 

@@ -179,6 +179,9 @@
         document.getElementById('files-up').style.display = 'none';
         document.getElementById('files-box').style.display = 'none';
         document.getElementById('loader-box').style.display = 'block';
+        // Анимация не работает на моб. устройствах только в момент загрузки фалов на сервер
+        // Задержка нужна для мобильных устройств, иначе анимация загрузки не работает, картинка статичная
+        // Анимация gif svg на мобилках не работает в принципе (при upload)
         setTimeout(() => document.getElementById('frm').submit(), 600);
 
     }
