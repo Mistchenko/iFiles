@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_Flask
+    
+    container_name: '${APP_NAME}_Flask'
+    command: python server.py
+    volumes:
+     - ./app:/app
+     - ${APP_STORE}:/store
+    ports:
+     - "5000:5000"
+    

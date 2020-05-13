@@ -1,0 +1,10 @@
+FROM python:3.6
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /app
+RUN mkdir /deploy
+RUN mkdir /store
+WORKDIR /app
+ADD ./deploy /deploy
+RUN /deploy/run.sh
